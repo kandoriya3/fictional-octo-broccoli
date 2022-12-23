@@ -5,9 +5,21 @@
 </head>
 <body>
   <h1>Photo Uploader</h1>
-  <form action="/upload" method="post" enctype="multipart/form-data">
+  <form id="upload-form">
     <input type="file" name="photo" accept="image/*">
     <button type="submit">Upload</button>
   </form>
-</body>
-</html>
+  <script>
+    const form = document.getElementById('upload-form');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const fileInput = document.querySelector('input[type="file"]');
+      const file = fileInput.files[0];
+
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', 'vp7xbx5q');
+
+     
