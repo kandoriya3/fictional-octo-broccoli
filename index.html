@@ -1,25 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Photo Uploader</title>
+  <title>Image Comparison Slider</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Photo Uploader</h1>
-  <form id="upload-form">
-    <input type="file" name="photo" accept="image/*">
-    <button type="submit">Upload</button>
-  </form>
-  <script>
-    const form = document.getElementById('upload-form');
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const fileInput = document.querySelector('input[type="file"]');
-      const file = fileInput.files[0];
-
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', 'vp7xbx5q');
-
-     
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slider-before">
+        <img src="before.png" alt="Before Image">
+      </div>
+      <div class="slider-after">
+        <img src="after.png" alt="After Image">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
